@@ -1,0 +1,343 @@
+{"eventFilters":{"hierarchyCheck":"series"
+"offAirTBA":true}
+"groupName":"ids"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-03"
+"description":"All premium channel linear and VOD events must have a seasonId"
+"documentId":"Data-03"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"internalIds.seasonId"}]
+"operator":"AND"}}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"titles"
+"name":"Data-08"
+"description":"All events must have a program title"
+"documentId":"Data-08"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTitles"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"program"}
+{"field":"value.<lang>"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"titles"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-10"
+"description":"All premium channel events must have an episode title"
+"documentId":"Data-10"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTitles"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"program"}
+{"field":"value.<lang>"}
+{"field":"type"
+"fieldValue":"episode"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreIncludes":"Film"
+"offAirTBA":true}
+"groupName":"synopsis"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-11"
+"description":"All premium channel Film events must have a longSynopsis"
+"documentId":"Data-11"
+"threshold":"99"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTextItems"
+"fields":[{"field":"type"
+"fieldValue":" longSynopsis"}
+{"field":"value.<lang>"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"synopsis"
+"name":"Data-12"
+"description":"All events must have a shortSynopsis"
+"documentId":"Data-12"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTextItems"
+"fields":[{"field":"type"
+"fieldValue":"shortSynopsis"}
+{"field":"value.<lang>"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"tags"
+"name":"Data-13"
+"description":"All events must have a genre"
+"documentId":"Data-13"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"tags"
+"fields":[{"field":"category.categoryId"
+"fieldValue":"genre.teliaSonera"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreExcludes":"News & Current Affairs
+Shopping
+Religious"
+"offAirTBA":true}
+"groupName":"tags"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-15"
+"description":"All premium channel events must have content tags"
+"documentId":"Data-15"
+"threshold":"85"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"tags"
+"fields":[{"field":"category.categoryId"
+"fieldValue":"contentTag.ericsson"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreIncludes":"Film
+Drama Series"
+"offAirTBA":true}
+"groupName":"misc"
+"name":"Data-16"
+"description":"Awards (Film and Drama Series Only)"
+"documentId":"Data-16"
+"threshold":"0"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"programAwards"}]
+"operator":"AND"}}
+{"groupName":"misc"
+"name":"Data-23 (Schedule Event Coverage)"
+"description":"check for gaps and overlaps"
+"documentId":"Data-23 (Schedule Event Coverage)"
+"type":"eventCoverage"}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"images"
+"name":"Data-24 (all events have images)"
+"description":"All events must have images"
+"documentId":"Data-24 (all events have images)"
+"threshold":"0"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"images"}]
+"operator":"AND"}}
+{"eventFilters":{"hierarchyCheck":"season"
+"offAirTBA":true}
+"groupName":"images"
+"name":"Data-24 (has season images)"
+"description":"All events must have season images"
+"documentId":"Data-24 (has season images)"
+"threshold":80
+"type":"fieldCheck"
+"fieldsObject":{"nest":"images"
+"fields":[{"field":"type"
+"fieldValue":"season"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"hierarchyCheck":"series"
+"offAirTBA":true}
+"groupName":"images"
+"name":"Data-24 (has series images)"
+"description":"All events must have series images"
+"documentId":"Data-24 (has series images)"
+"threshold":80
+"type":"fieldCheck"
+"fieldsObject":{"nest":"images"
+"fields":[{"field":"type"
+"fieldValue":"series"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"offAirTBA":true}
+"groupName":"titles"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-28"
+"description":"All premium channel events must have a program title"
+"documentId":"Data-28"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTitles"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"series"}
+{"field":"value.<lang>"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreExcludes":"News & Current Affairs
+Shopping
+Religious
+Adult"
+"hierarchyCheck":"series"
+"offAirTBA":true}
+"groupName":"synopsis"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-31"
+"description":"All premium channel events must have a short series synopsis using lang code"
+"documentId":"Data-31"
+"threshold":"90"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTextItems"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"series"}
+{"field":"value.<lang>"}
+{"field":"type"
+"fieldValue":"shortSynopsis"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"hierarchyCheck":"series"
+"offAirTBA":true}
+"groupName":"synopsis"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-32"
+"description":"All premium channel events must have a series synopsis using lang code"
+"documentId":"Data-32"
+"threshold":"90"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTextItems"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"series"}
+{"field":"value.<lang>"}
+{"field":"type"
+"fieldValue":"longSynopsis"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreExcludes":"News & Current Affairs
+Shopping
+Religious
+Adult"
+"hierarchyCheck":"season"
+"offAirTBA":true}
+"groupName":"synopsis"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-33"
+"description":"All premium channel events must have a season synopsis using lang code"
+"documentId":"Data-33"
+"threshold":"90"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"searchableTextItems"
+"fields":[{"field":"hierarchyLevel"
+"fieldValue":"season"}
+{"field":"value.<lang>"}
+{"field":"type"
+"fieldValue":"shortSynopsis"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreExcludes":"Sport"
+"hierarchyCheck":"season"
+"offAirTBA":true}
+"groupName":"misc"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-36"
+"description":"All premium channel events with a season must have a seasonNumber"
+"documentId":"Data-36"
+"threshold":90
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"seasonNumber"}]
+"operator":"AND"}}
+{"eventFilters":{"genreIncludes":"Film
+Drama Series"
+"offAirTBA":true}
+"groupName":"misc"
+"sourceFilters":{"qualityFilter":"premium"}
+"name":"Data-38"
+"description":"All premium channel events must have a Year Of Production (Film Only)"
+"documentId":"Data-38"
+"threshold":"100"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"yearOfProduction"}]
+"operator":"AND"}}
+{"eventFilters":{"genreIncludes":"Film
+Drama Series
+Documentary"
+"offAirTBA":true}
+"groupName":"misc"
+"name":"Data-40"
+"description":"IMDb url (Film
+ Drama Series and Documentaries Only)"
+"documentId":"Data-40"
+"type":"fieldCheck"
+"fieldsObject":{"nest":"relatedMaterial"
+"fields":[{"field":"origin"
+"fieldValue":"IMDB"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreIncludes":"Drama Series"
+"offAirTBA":true}
+"groupName":"misc"
+"sourceFilters":{"qualityFilter":"premium"
+"sourceTypeFilter":"linear"}
+"name":"Data-41 (Drama Only)"
+"description":"All premium channel events must have qualityRatings (Drama Only)"
+"documentId":"Data-41 (Drama Only)"
+"threshold":90
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"qualityRatings"}]
+"operator":"AND"}}
+{"eventFilters":{"genreIncludes":"Film"
+"offAirTBA":true}
+"groupName":"misc"
+"sourceFilters":{"qualityFilter":"premium"
+"sourceTypeFilter":"linear"}
+"name":"Data-41 (Film Only)"
+"description":"All premium channel events must have qualityRatings (Film Only)"
+"documentId":"Data-41 (Film Only)"
+"threshold":"90"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"qualityRatings"}]
+"operator":"AND"}}
+{"eventFilters":{"genreIncludes":"Adult"
+"offAirTBA":true}
+"groupName":"misc"
+"name":"Data-42"
+"description":"ageRatings (Adult Only)"
+"documentId":"Data-42"
+"threshold":"0"
+"type":"fieldCheck"
+"fieldsObject":{"fields":[{"field":"ageRatings"}]
+"operator":"AND"}}
+{"eventFilters":{"subGenreIncludes":"Animation"
+"offAirTBA":true}
+"groupName":"misc"
+"name":"Data-45 (animation only minimum of 2)"
+"description":"Contributions (animation only minimum and maximum of 2)"
+"documentId":"Data-45 (animation only minimum of 2)"
+"threshold":"70"
+"type":"fieldCheck"
+"fieldsObject":{"minOccurs":2
+"nest":"contributions"
+"fields":[{"field":"contributionTypeId"
+"fieldValue":"DIRECTOR"}
+{"field":"contributionTypeId"
+"fieldValue":"PRODUCER"}]
+"operator":"nestedOR"}}
+{"eventFilters":{"genreIncludes":"Film"
+"offAirTBA":true}
+"groupName":"misc"
+"name":"Data-45 (film only minimum of 6)"
+"description":"Contributions (film only minimum of 6)"
+"documentId":"Data-45 (film only minimum of 6)"
+"threshold":"70"
+"type":"fieldCheck"
+"fieldsObject":{"minOccurs":6
+"nest":"contributions"
+"fields":[{"field":"contributorId"}
+{"field":"contributorNames"}
+{"field":"contributionType"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreIncludes":"Film"
+"offAirTBA":true
+"fieldCheck":{"fields":[{"field":"yearOfProduction"
+"lessThan":2000}]
+"operator":"AND"}}
+"groupName":"misc"
+"name":"Data-45 (films with yearOfProduction < 2000)"
+"description":"Contributions (films with yearOfProduction < 2000)"
+"documentId":"Data-45 (films with yearOfProduction < 2000)"
+"threshold":"70"
+"type":"fieldCheck"
+"fieldsObject":{"minOccurs":6
+"nest":"contributions"
+"fields":[{"field":"contributorId"}
+{"field":"contributorNames"}
+{"field":"contributionType"}]
+"operator":"nestedAND"}}
+{"eventFilters":{"genreIncludes":"Film"
+"offAirTBA":true
+"fieldCheck":{"fields":[{"field":"yearOfProduction"
+"greaterThan":2000}]
+"operator":"AND"}}
+"groupName":"misc"
+"name":"Data-45 (films with yearOfProduction > 2000)"
+"description":"Contributions (films with yearOfProduction > 2000)"
+"documentId":"Data-45 (films with yearOfProduction > 2000)"
+"threshold":"70"
+"type":"fieldCheck"
+"fieldsObject":{"minOccurs":6
+"nest":"contributions"
+"fields":[{"field":"contributorId"}
+{"field":"contributorNames"}
+{"field":"contributionType"}]
+"operator":"nestedAND"}}
